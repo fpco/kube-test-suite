@@ -1,20 +1,10 @@
-#!/usr/bin/env stack
-{- stack
-   script
-   --resolver lts-11.15
-   --package rio
-   --package turtle
-   --package aeson
-   --package hspec
--}
-
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE RecordWildCards   #-}
 {-# LANGUAGE DeriveGeneric     #-}
-
--- Swap `script` with `exec ghci` to load script into ghci REPL
--- If on NixOS add --nix and --no-nix-pure
+module Lib
+    ( kubeTest
+    ) where
 
 import RIO
 import RIO.Text (encodeUtf8)
@@ -122,7 +112,8 @@ getServices = do
               `shouldSatisfy`
               (not . null)
 
-main = do
+kubeTest :: IO ()
+kubeTest = do
   clusterName <- need "CLUSTER_NAME"
   kubeConfig  <- need "KUBECONFIG"
 

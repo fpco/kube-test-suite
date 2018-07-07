@@ -1,0 +1,46 @@
+name:                faros
+version:             0.1.0.0
+github:              "githubuser/faros"
+license:             MIT
+author:              "Mike McGirr"
+maintainer:          "mike@fpcomplete.com"
+copyright:           "2018 FP Complete"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+synopsis:            Faros. Small tests for validating Kubernetes deployments
+description:         Please see the README on GitHub at <https://github.com/fpco/kube-test-suite/faros#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- rio
+- turtle
+- aeson
+- hspec
+
+library:
+  source-dirs: src
+
+executables:
+  kube-tests:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - faros
+
+tests:
+  faros-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - faros
