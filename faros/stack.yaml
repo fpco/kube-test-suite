@@ -1,0 +1,10 @@
+resolver: lts-11.16
+
+packages:
+- .
+
+# uncomment on NixOS systems
+# nix:
+#   enable: true
+#   pure: true
+#   packages: [ zlib, pkgconfig ]
