@@ -1,5 +1,7 @@
 # The Kubernetes Test Suite
 
+Copyright (c) 2018 FP Complete. All rights reserved.
+
 ## General 
 
 A set of Haskell stack scripts for testing and validating Kubernetes deployments.

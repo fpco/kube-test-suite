@@ -1,7 +1,6 @@
 name:                faros
 version:             0.1.0.0
 github:              "githubuser/faros"
-license:             MIT
 author:              "Mike McGirr"
 maintainer:          "mike@fpcomplete.com"
 copyright:           "2018 FP Complete"
