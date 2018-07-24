@@ -128,7 +128,7 @@ kubeTest = do
         (Just _, Nothing) ->
           logError "Missing KUBECONFIG environmental variable."
         (Nothing, Just _) ->
-          logError "Missing KUBECONFIG environmental variable."
+          logError "Missing CLUSTER_NAME environmental variable."
         (Just _, Just _) -> do
           logInfo "Running tests on nodes.\n"
           getNodes
