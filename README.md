@@ -4,11 +4,13 @@ Copyright (c) 2018 FP Complete. All rights reserved.
 
 ## General 
 
-A set of Haskell stack scripts for testing and validating Kubernetes deployments.
+WIP
+
+Currently a basic Haskell binary for testing and validating Kubernetes deployments.
 
 ## Dependencies
 
-- [Stack](https://docs.haskellstack.org/en/stable/README/)
+- [stack](https://docs.haskellstack.org/en/stable/README/)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 ## Instructions for running
@@ -17,3 +19,9 @@ A set of Haskell stack scripts for testing and validating Kubernetes deployments
 cd faros
 stack build && stack exec kube-tests
 ```
+
+## Note
+
+Because Kubernetes (κυβερνήτης) is Greek for "helmsman" or "pilot", it seemed
+appropriate to name a Kubernetes testing library fáros (or φάρος) which is
+Greek for "lighthouse".
