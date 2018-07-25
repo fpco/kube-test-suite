@@ -23,5 +23,5 @@ stack build && stack exec kube-tests
 ## Note
 
 Because Kubernetes (κυβερνήτης) is Greek for "helmsman" or "pilot", it seemed
-appropriate to name a Kubernetes testing library fáros (or φάρος) which is
+appropriate to name a Kubernetes testing library fáros ([φάρος](https://en.wiktionary.org/wiki/%CF%86%CE%AC%CF%81%CE%BF%CF%82)) which is
 Greek for "lighthouse".
