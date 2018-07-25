@@ -9,7 +9,7 @@ module Lib
 import RIO
 import RIO.Text (encodeUtf8)
 import RIO.ByteString.Lazy (fromStrict)
-import Turtle (shellStrict, empty, need, fromText)
+import Turtle (shellStrict, empty, need)
 import Data.Aeson
 import GHC.Generics (Generic)
 import Test.Hspec
@@ -81,6 +81,8 @@ getNodes = do
             (map nodeName (itemsNodes nodes))
               `shouldSatisfy`
               (\i -> (not $ null i))
+          Left msg -> do
+            expectationFailure $ "Parsing JSON: " ++ msg
 
 getServices :: (MonadIO m, MonadReader env m, HasLogFunc env, HasCallStack) => m ()
 getServices = do
@@ -126,7 +128,7 @@ kubeTest = do
         (Just _, Nothing) ->
           logError "Missing KUBECONFIG environmental variable."
         (Nothing, Just _) ->
-          logError "Missing KUBECONFIG environmental variable."
+          logError "Missing CLUSTER_NAME environmental variable."
         (Just _, Just _) -> do
           logInfo "Running tests on nodes.\n"
           getNodes
